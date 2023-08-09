@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.effect{
+        transition: all 0.5s ease;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background: #e3f9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: white; 
+    position: relative;
+    min-width: 300px;
+    min-height: 400px;
+    box-shadow: 0 0 30px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toggle{
+    position: absolute;
+    top: 25px;
+    right: 33px;
+    cursor: pointer;
+    display: block;
+    width: 55px;
+    height: 25px;
+    background: #e6e6e6;
+    border-radius: 25px;
+}
+
+.toggle .indicator{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: 26px;
+    background-color: #ed7631;
+    border-radius: 50%;
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+
+#screen{
+    border: none;
+    outline: none;
+    width: auto;
+    max-width: 270px;
+    text-align: right;
+    font-size: 30px;
+    padding-top: 50%;
+    margin-bottom: 20px;
+    padding-right: 4%;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button{
+    position: relative;
+    border: none;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    margin: 6px;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    line-height: 2;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+button#point{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+button.oprator{
+    color: #ed7631;
+    font-size: 1.5rem;
+}
+
+button#backspace{
+    font-weight: bolder;
+    font-size: 1.6rem;
+    
+}
+
+button#equal{
+    width: 93%;
+    border-radius: 15px;
+    background: #ed7631;
+    color: white;
+}
+
+span{
+    position: absolute;
+    z-index: 2;
+    background-color: gray;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    pointer-events: none;
+    animation: effect 0.6s linear infinite;
+
+}
+
+ #equal span {
+    background-color: #ffaa78;
+ }
+
+@keyframes effect {
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    100%{
+        width: 500px;
+        height: 500px;
+        opacity: 0.2;
+    }
+
+}
+
+/* darkmode styling */
+
+.calculator.active{
+    background: #202124; 
+}
+
+#screen.active{
+    background-color:#202124 ;
+}
+
+.toggle.active{
+    background-color: #303134;
+}
+
+.toggle.active .indicator{
+    left: 29px;
+}
+
+
+.number.active{
+    color: #757575;
+}
